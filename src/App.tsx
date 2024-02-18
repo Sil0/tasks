@@ -23,6 +23,9 @@ function App(): JSX.Element {
                                 <li>rock climbing</li>
                                 <li>singing</li>
                             </ol>
+                            <Button onClick={() => console.log("Hello World!")}>
+                                Log Hello World
+                            </Button>
                         </Col>
                         <Col>
                             Here is a cool image.
