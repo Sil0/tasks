@@ -9,9 +9,9 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                Silo Murphy UD CISC275 with React Hooks and TypeScript. This is
-                my page header.
+                Silo Murphy UD CISC275 with React Hooks and TypeScript.
             </header>
+            <h1>This is my page header.</h1>
             <p>
                 Hello World. This is my webpage.
                 <Container>
