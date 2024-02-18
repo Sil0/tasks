@@ -26,6 +26,15 @@ function App(): JSX.Element {
                             <Button onClick={() => console.log("Hello World!")}>
                                 Log Hello World
                             </Button>
+                            <div
+                                style={{
+                                    border: "1px solid red",
+                                    padding: "4px",
+                                    width: "500px",
+                                    height: "100px",
+                                    backgroundColor: "red"
+                                }}
+                            ></div>
                         </Col>
                         <Col>
                             Here is a cool image.
@@ -33,6 +42,15 @@ function App(): JSX.Element {
                                 src={require("./images/cool_dinosaur.jpeg")}
                                 alt="A cool picture of a dinosaur"
                             />
+                            <div
+                                style={{
+                                    border: "1px solid red",
+                                    padding: "4px",
+                                    width: "50px",
+                                    height: "10px",
+                                    backgroundColor: "red"
+                                }}
+                            ></div>
                         </Col>
                     </Row>
                 </Container>
