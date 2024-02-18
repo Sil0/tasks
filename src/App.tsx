@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+
 function App(): JSX.Element {
     return (
         <div className="App">
@@ -19,11 +20,17 @@ function App(): JSX.Element {
                             Here are three things I like:
                             <ul>
                                 <li>math</li>
-                                <li>singing</li>
                                 <li>rock climbing</li>
+                                <li>singing</li>
                             </ul>
                         </Col>
-                        <Col>Here is a nice rectangle.</Col>
+                        <Col>
+                            Here is a cool image.
+                            <img
+                                src={require("./images/cool_dinosaur.jpeg")}
+                                alt="A cool picture of a dinosaur"
+                            />
+                        </Col>
                     </Row>
                 </Container>
             </p>
