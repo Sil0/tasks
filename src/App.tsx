@@ -18,11 +18,11 @@ function App(): JSX.Element {
                     <Row>
                         <Col>
                             Here are three things I like:
-                            <ul>
+                            <ol>
                                 <li>math</li>
                                 <li>rock climbing</li>
                                 <li>singing</li>
-                            </ul>
+                            </ol>
                         </Col>
                         <Col>
                             Here is a cool image.
