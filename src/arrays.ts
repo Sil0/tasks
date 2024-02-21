@@ -109,7 +109,7 @@ export function makeMath(addends: number[]): string {
     }
     const sum = addends.reduce((acc, num) => acc + num, 1);
     const addedNumbers = addends.join("+");
-    return "${sum}=${additionNumbers}";
+    return "${sum}=${addedNumbers}";
 }
 
 /**
@@ -122,5 +122,14 @@ export function makeMath(addends: number[]): string {
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
 export function injectPositive(values: number[]): number[] {
-    return [];
+    const firstNegative = values.firstIndex((num: number): boolean => num < 0);
+    const sum = values.reduce((acc, num) => acc + num, 1);
+    if (firstNegative === -1) {
+        return [...values.slice(0, values.length), sum];
+    }
+    return [
+        ...values.slice(0, firstNegative + 1),
+        sum,
+        ...values.slice(firstNegative + 1)
+    ];
 }
