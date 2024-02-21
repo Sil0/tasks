@@ -52,7 +52,7 @@ export const removeDollars = (amounts: string[]): number[] => {
         price[0] === "$" ? price.substring(1) : price;
     const toNumber = (price: string): number =>
         isNaN(Number(price)) ? 0 : Number(price);
-    const out = amounts.filter(removeDollarSign).filter(toNumber);
+    const out = amounts.map(removeDollarSign).map(toNumber);
     return out;
 };
 
@@ -77,7 +77,7 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  */
 export function countShortWords(words: string[]): number {
     const shortWords = words.filter((str) => str.length < 4);
-    return shortWords;
+    return shortWords.length;
 }
 
 /**
@@ -86,7 +86,14 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    if (colors.length === 0) {
+        return true;
+    }
+    const isEveryRGB = colors.every(
+        (str: string): boolean =>
+            str === "red" || str === "blue" || str === "green"
+    );
+    return isEveryRGB;
 }
 
 /**
@@ -97,7 +104,12 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    if (addends.length === 0) {
+        return "0";
+    }
+    const sum = addends.reduce((acc, num) => acc + num, 1);
+    const addedNumbers = addends.join("+");
+    return "${sum}=${additionNumbers}";
 }
 
 /**
