@@ -103,13 +103,14 @@ export function allRGB(colors: string[]): boolean {
  * For instance, the array [1, 2, 3] would become "6=1+2+3".
  * And the array [] would become "0=0".
  */
+
 export function makeMath(addends: number[]): string {
     if (addends.length === 0) {
-        return "0";
+        return "0=0";
     }
-    const sum = addends.reduce((acc, num) => acc + num, 1);
+    const sum = addends.reduce((acc, num) => acc + num, 0);
     const addedNumbers = addends.join("+");
-    return "${sum}=${addedNumbers}";
+    return `${sum}=${addedNumbers}`;
 }
 
 /**
@@ -121,15 +122,19 @@ export function makeMath(addends: number[]): string {
  * For instance, the array [1, 9, -5, 7] would become [1, 9, -5, 10, 7]
  * And the array [1, 9, 7] would become [1, 9, 7, 17]
  */
+
 export function injectPositive(values: number[]): number[] {
-    const firstNegative = values.firstIndex((num: number): boolean => num < 0);
-    const sum = values.reduce((acc, num) => acc + num, 1);
+    const firstNegative = values.findIndex((num: number): boolean => num < 0);
     if (firstNegative === -1) {
-        return [...values.slice(0, values.length), sum];
+        const sum = values.reduce((acc, num) => acc + num, 0);
+        return [...values, sum];
+    } else {
+        const positiveValues = values.slice(0, firstNegative);
+        const sum = positiveValues.reduce((acc, num) => acc + num, 0);
+        return [
+            ...values.slice(0, firstNegative + 1),
+            sum,
+            ...values.slice(firstNegative + 1)
+        ];
     }
-    return [
-        ...values.slice(0, firstNegative + 1),
-        sum,
-        ...values.slice(firstNegative + 1)
-    ];
 }
