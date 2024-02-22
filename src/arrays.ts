@@ -6,8 +6,7 @@
  */
 export function bookEndList(numbers: number[]): number[] {
     if (numbers.length === 0) {
-        const cloneNumbers = [];
-        return cloneNumbers;
+        return [];
     } else if (numbers.length === 2) {
         const cloneNumbers = [...numbers];
         return cloneNumbers;
