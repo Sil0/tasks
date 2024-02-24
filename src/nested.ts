@@ -202,7 +202,34 @@ export function changeQuestionTypeById(
     targetId: number,
     newQuestionType: QuestionType
 ): Question[] {
-    return [];
+    const targetIndex = questions.findIndex(
+        (qst: Question): boolean => qst.id === targetId
+    );
+    if (targetIndex === -1) {
+        return [...questions];
+    }
+    const oldQuestionType = questions[targetIndex].type;
+    let retypedQuestion: Question;
+    if (
+        newQuestionType === "short_answer_question" &&
+        oldQuestionType === "multiple_choice_question"
+    ) {
+        retypedQuestion = {
+            ...questions[targetIndex],
+            type: newQuestionType,
+            options: []
+        };
+    } else {
+        retypedQuestion = {
+            ...questions[targetIndex],
+            type: newQuestionType
+        };
+    }
+    return [
+        ...questions.slice(0, targetIndex),
+        retypedQuestion,
+        ...questions.slice(targetIndex + 1)
+    ];
 }
 
 /**
