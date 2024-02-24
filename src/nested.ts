@@ -95,7 +95,6 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    const heading = "id,name,options,points,published";
     const table = questions.map(
         (qst: Question): string =>
             "\n" +
@@ -107,7 +106,10 @@ export function toCSV(questions: Question[]): string {
                 qst.published
             ].join()
     );
-    return table.reduce((acc, line) => acc + line, heading);
+    return table.reduce(
+        (acc, line) => acc + line,
+        "id,name,options,points,published"
+    );
 }
 
 /**
@@ -116,7 +118,14 @@ export function toCSV(questions: Question[]): string {
  * making the `text` an empty string, and using false for both `submitted` and `correct`.
  */
 export function makeAnswers(questions: Question[]): Answer[] {
-    return [];
+    return questions.map(
+        (qst: Question): Answer => ({
+            questionId: qst.id,
+            text: "",
+            submitted: false,
+            correct: false
+        })
+    );
 }
 
 /***
