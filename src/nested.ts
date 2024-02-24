@@ -95,7 +95,19 @@ id,name,options,points,published
  * Check the unit tests for more examples!
  */
 export function toCSV(questions: Question[]): string {
-    return "";
+    const heading = "id,name,options,points,published";
+    const table = questions.map(
+        (qst: Question): string =>
+            "\n" +
+            [
+                qst.id,
+                qst.name,
+                qst.options.length,
+                qst.points,
+                qst.published
+            ].join()
+    );
+    return table.reduce((acc, line) => acc + line, heading);
 }
 
 /**
