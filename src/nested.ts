@@ -248,7 +248,32 @@ export function editOption(
     targetOptionIndex: number,
     newOption: string
 ): Question[] {
-    return [];
+    const targetQuestion = findQuestion(questions, targetId);
+    if (targetOptionIndex === -1) {
+        return questions.map(
+            (qst: Question): Question =>
+                qst.id === targetId
+                    ? {
+                          ...qst,
+                          options: [...qst.options, newOption]
+                      }
+                    : qst
+        );
+    } else {
+        return questions.map(
+            (qst: Question): Question =>
+                qst.id === targetId
+                    ? {
+                          ...qst,
+                          options: [
+                              ...qst.options.slice(0, targetOptionIndex),
+                              newOption,
+                              ...qst.options.slice(targetOptionIndex + 1)
+                          ]
+                      }
+                    : qst
+        );
+    }
 }
 
 /***
