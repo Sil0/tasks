@@ -12,7 +12,7 @@ export function ChangeType(): JSX.Element {
                 ? "multiple_choice_question"
                 : "short_answer_question"
         );
-        console.log(questionType);
+        //console.log(questionType);
     };
 
     return (
@@ -20,8 +20,8 @@ export function ChangeType(): JSX.Element {
             <Button onClick={swapType}>Change Question Type</Button>
             <p>
                 {questionType === "multiple_choice_question"
-                    ? "Multiple Choice Question"
-                    : "Short Answer Question"}
+                    ? "Multiple Choice"
+                    : "Short Answer"}
             </p>
         </span>
     );
