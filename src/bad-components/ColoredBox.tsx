@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { Color } from "react-bootstrap/esm/types";
+//import { Color } from "react-bootstrap/esm/types";
 
 export const COLORS = ["red", "blue", "green"];
 const DEFAULT_COLOR_INDEX = 0;
@@ -17,7 +17,7 @@ function ChangeColor({ index, setIndex }: ColoredBoxProps): JSX.Element {
     );
 }
 
-function ColorPreview({ index, setIndex }: ColoredBoxProps): JSX.Element {
+function ColorPreview({ index }: { index: number }): JSX.Element {
     return (
         <div
             data-testid="colored-box"
@@ -44,10 +44,7 @@ export function ColoredBox(): JSX.Element {
                     index={colorIndex}
                     setIndex={setColorIndex}
                 ></ChangeColor>
-                <ColorPreview
-                    index={colorIndex}
-                    setIndex={setColorIndex}
-                ></ColorPreview>
+                <ColorPreview index={colorIndex}></ColorPreview>
             </div>
         </div>
     );
