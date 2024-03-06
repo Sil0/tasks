@@ -17,11 +17,11 @@ export function ChangeType(): JSX.Element {
 
     return (
         <span>
-            <Button onClick={swapType}>Change Question Type</Button>
+            <Button onClick={swapType}>Change Type</Button>
             <p>
                 {questionType === "multiple_choice_question"
-                    ? "Multiple Choice"
-                    : "Short Answer"}
+                    ? "Multiple Choice Question"
+                    : "Short Answer Question"}
             </p>
         </span>
     );
