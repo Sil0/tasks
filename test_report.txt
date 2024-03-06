@@ -14,7 +14,6 @@ Browserslist: caniuse-lite is outdated. Please run:
 PASS src/objects.test.ts
 PASS src/arrays.test.ts
 PASS src/nested.test.ts
-PASS src/functions.test.ts
 PASS src/components/StartAttempt.test.tsx
   ● Console
 
@@ -98,148 +97,7 @@ PASS src/components/StartAttempt.test.tsx
 
       at updateAttempts (src/components/StartAttempt.tsx:10:17)
 
-FAIL src/components/ChangeType.test.tsx
-  ● ChangeType Component tests › There is a button labeled Change Type
-
-    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Change Type/i`
-
-    Here are the accessible roles:
-
-      button:
-
-      Name "Change Question Type":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<span>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mChange Question Type[0m
-          [36m</button>[39m
-          [36m<p>[39m
-            [0mShort Answer[0m
-          [36m</p>[39m
-        [36m</span>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      19 |
-      20 |     test("There is a button labeled Change Type", () => {
-    > 21 |         const changeTypeButton = screen.getByRole("button", {
-         |                                         ^
-      22 |             name: /Change Type/i
-      23 |         });
-      24 |         expect(changeTypeButton).toBeInTheDocument();
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/components/ChangeType.test.tsx:21:41)
-
-  ● ChangeType Component tests › Clicking the button changes the type.
-
-    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Change Type/i`
-
-    Here are the accessible roles:
-
-      button:
-
-      Name "Change Question Type":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<span>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mChange Question Type[0m
-          [36m</button>[39m
-          [36m<p>[39m
-            [0mShort Answer[0m
-          [36m</p>[39m
-        [36m</span>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      26 |
-      27 |     test("Clicking the button changes the type.", () => {
-    > 28 |         const changeTypeButton = screen.getByRole("button", {
-         |                                         ^
-      29 |             name: /Change Type/i
-      30 |         });
-      31 |         changeTypeButton.click();
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/components/ChangeType.test.tsx:28:41)
-
-  ● ChangeType Component tests › Clicking the button twice keeps the type the same.
-
-    TestingLibraryElementError: Unable to find an accessible element with the role "button" and name `/Change Type/i`
-
-    Here are the accessible roles:
-
-      button:
-
-      Name "Change Question Type":
-      [36m<button[39m
-        [33mclass[39m=[32m"btn btn-primary"[39m
-        [33mtype[39m=[32m"button"[39m
-      [36m/>[39m
-
-      --------------------------------------------------
-
-    Ignored nodes: comments, <script />, <style />
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<span>[39m
-          [36m<button[39m
-            [33mclass[39m=[32m"btn btn-primary"[39m
-            [33mtype[39m=[32m"button"[39m
-          [36m>[39m
-            [0mChange Question Type[0m
-          [36m</button>[39m
-          [36m<p>[39m
-            [0mShort Answer[0m
-          [36m</p>[39m
-        [36m</span>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-
-      39 |
-      40 |     test("Clicking the button twice keeps the type the same.", () => {
-    > 41 |         const changeTypeButton = screen.getByRole("button", {
-         |                                         ^
-      42 |             name: /Change Type/i
-      43 |         });
-      44 |         changeTypeButton.click();
-
-      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:38:19)
-      at node_modules/@testing-library/dom/dist/query-helpers.js:90:38
-      at node_modules/@testing-library/dom/dist/query-helpers.js:62:17
-      at getByRole (node_modules/@testing-library/dom/dist/query-helpers.js:111:19)
-      at Object.<anonymous> (src/components/ChangeType.test.tsx:41:41)
-
+PASS src/bad-components/ChooseTeam.test.tsx
 PASS src/components/TwoDice.test.tsx
   ● Console
 
@@ -323,34 +181,45 @@ PASS src/components/TwoDice.test.tsx
 
       at updateAttempts (src/components/StartAttempt.tsx:10:17)
 
+PASS src/functions.test.ts
+PASS src/bad-components/DoubleHalf.test.tsx
+PASS src/components/ChangeType.test.tsx
 PASS src/components/CycleHoliday.test.tsx
 PASS src/components/Counter.test.tsx
-PASS src/App.test.tsx
 PASS src/components/RevealAnswer.test.tsx
--------------------|---------|----------|---------|---------|-------------------
-File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
--------------------|---------|----------|---------|---------|-------------------
-All files          |   97.36 |    90.27 |    98.9 |   97.22 |                   
- src               |   97.97 |    94.64 |     100 |   97.82 |                   
-  App.tsx          |     100 |      100 |     100 |     100 |                   
-  arrays.ts        |     100 |      100 |     100 |     100 |                   
-  functions.ts     |     100 |      100 |     100 |     100 |                   
-  nested.ts        |   95.08 |    86.95 |     100 |   94.82 | 186,213,300       
-  objects.ts       |     100 |      100 |     100 |     100 |                   
- src/components    |   95.23 |       75 |   94.44 |   95.23 |                   
-  ChangeType.tsx   |      75 |       25 |      50 |      75 | 10                
-  Counter.tsx      |     100 |      100 |     100 |     100 |                   
-  CycleHoliday.tsx |     100 |      100 |     100 |     100 |                   
-  RevealAnswer.tsx |     100 |      100 |     100 |     100 |                   
-  StartAttempt.tsx |    92.3 |    83.33 |     100 |    92.3 | 15                
-  TwoDice.tsx      |     100 |      100 |     100 |     100 |                   
- src/interfaces    |       0 |        0 |       0 |       0 |                   
-  answer.ts        |       0 |        0 |       0 |       0 |                   
-  question.ts      |       0 |        0 |       0 |       0 |                   
--------------------|---------|----------|---------|---------|-------------------
+PASS src/bad-components/ShoveBox.test.tsx
+PASS src/bad-components/ColoredBox.test.tsx
+PASS src/App.test.tsx
+----------------------|---------|----------|---------|---------|-------------------
+File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------------|---------|----------|---------|---------|-------------------
+All files             |   97.71 |    93.24 |     100 |   97.57 |                   
+ src                  |   97.97 |    94.64 |     100 |   97.82 |                   
+  App.tsx             |     100 |      100 |     100 |     100 |                   
+  arrays.ts           |     100 |      100 |     100 |     100 |                   
+  functions.ts        |     100 |      100 |     100 |     100 |                   
+  nested.ts           |   95.08 |    86.95 |     100 |   94.82 | 186,213,300       
+  objects.ts          |     100 |      100 |     100 |     100 |                   
+ src/bad-components   |   96.55 |       50 |     100 |   96.15 |                   
+  ChooseTeam.tsx      |     100 |       50 |     100 |     100 | 18                
+  ColoredBox.tsx      |     100 |      100 |     100 |     100 |                   
+  DoubleHalf.tsx      |     100 |      100 |     100 |     100 |                   
+  DoubleHalfState.tsx |       0 |      100 |     100 |       0 | 3                 
+  ShoveBox.tsx        |     100 |      100 |     100 |     100 |                   
+ src/components       |   97.61 |    93.75 |     100 |   97.61 |                   
+  ChangeType.tsx      |     100 |      100 |     100 |     100 |                   
+  Counter.tsx         |     100 |      100 |     100 |     100 |                   
+  CycleHoliday.tsx    |     100 |      100 |     100 |     100 |                   
+  RevealAnswer.tsx    |     100 |      100 |     100 |     100 |                   
+  StartAttempt.tsx    |    92.3 |    83.33 |     100 |    92.3 | 15                
+  TwoDice.tsx         |     100 |      100 |     100 |     100 |                   
+ src/interfaces       |       0 |        0 |       0 |       0 |                   
+  answer.ts           |       0 |        0 |       0 |       0 |                   
+  question.ts         |       0 |        0 |       0 |       0 |                   
+----------------------|---------|----------|---------|---------|-------------------
 
-Test Suites: 1 failed, 10 passed, 11 total
-Tests:       3 failed, 90 passed, 93 total
+Test Suites: 15 passed, 15 total
+Tests:       110 passed, 110 total
 Snapshots:   0 total
-Time:        5.519 s
+Time:        6.468 s
 Ran all test suites.
