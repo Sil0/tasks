@@ -11,15 +11,10 @@ const PEOPLE = [
 ];
 
 export function ChooseTeam(): JSX.Element {
-    const [allOptions, setAllOptions] = useState<string[]>(PEOPLE);
+    const [allOptions] = useState<string[]>(PEOPLE);
     const [team, setTeam] = useState<string[]>([]);
 
     function chooseMember(newMember: string) {
-        /*
-        if (!team.includes(newMember)) {
-            team.push(newMember);
-        }
-        */
         team.findIndex((member: string) => member === newMember) === -1
             ? setTeam([...team, newMember])
             : setTeam(team);
