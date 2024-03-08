@@ -97,7 +97,6 @@ PASS src/components/StartAttempt.test.tsx
 
       at updateAttempts (src/components/StartAttempt.tsx:10:17)
 
-PASS src/form-components/MultipleChoiceQuestion.test.tsx
 PASS src/components/TwoDice.test.tsx
   ● Console
 
@@ -181,24 +180,25 @@ PASS src/components/TwoDice.test.tsx
 
       at updateAttempts (src/components/StartAttempt.tsx:10:17)
 
+PASS src/form-components/MultipleChoiceQuestion.test.tsx
 PASS src/functions.test.ts
 PASS src/bad-components/DoubleHalf.test.tsx
 PASS src/bad-components/ChooseTeam.test.tsx
 PASS src/form-components/CheckAnswer.test.tsx
 PASS src/components/ChangeType.test.tsx
-PASS src/form-components/EditMode.test.tsx
 PASS src/components/CycleHoliday.test.tsx
-PASS src/form-components/ChangeColor.test.tsx
+PASS src/form-components/EditMode.test.tsx
 PASS src/form-components/GiveAttempts.test.tsx
+PASS src/form-components/ChangeColor.test.tsx
 PASS src/components/Counter.test.tsx
-PASS src/components/RevealAnswer.test.tsx
-PASS src/bad-components/ColoredBox.test.tsx
 PASS src/bad-components/ShoveBox.test.tsx
+PASS src/bad-components/ColoredBox.test.tsx
+PASS src/components/RevealAnswer.test.tsx
 PASS src/App.test.tsx
 -----------------------------|---------|----------|---------|---------|-------------------
 File                         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------|---------|----------|---------|---------|-------------------
-All files                    |   97.99 |     91.2 |     100 |   97.88 |                   
+All files                    |   97.99 |    92.22 |     100 |   97.88 |                   
  src                         |   97.97 |    94.64 |     100 |   97.82 |                   
   App.tsx                    |     100 |      100 |     100 |     100 |                   
   arrays.ts                  |     100 |      100 |     100 |     100 |                   
@@ -218,9 +218,9 @@ All files                    |   97.99 |     91.2 |     100 |   97.88 |
   RevealAnswer.tsx           |     100 |      100 |     100 |     100 |                   
   StartAttempt.tsx           |    92.3 |    83.33 |     100 |    92.3 | 15                
   TwoDice.tsx                |     100 |      100 |     100 |     100 |                   
- src/form-components         |     100 |    82.35 |     100 |     100 |                   
+ src/form-components         |     100 |     87.5 |     100 |     100 |                   
   ChangeColor.tsx            |     100 |      100 |     100 |     100 |                   
-  CheckAnswer.tsx            |     100 |    66.66 |     100 |     100 | 6                 
+  CheckAnswer.tsx            |     100 |      100 |     100 |     100 |                   
   EditMode.tsx               |     100 |      100 |     100 |     100 |                   
   GiveAttempts.tsx           |     100 |       50 |     100 |     100 | 12-19             
   MultipleChoiceQuestion.tsx |     100 |      100 |     100 |     100 |                   
@@ -232,5 +232,5 @@ All files                    |   97.99 |     91.2 |     100 |   97.88 |
 Test Suites: 20 passed, 20 total
 Tests:       134 passed, 134 total
 Snapshots:   0 total
-Time:        7.582 s
+Time:        7.754 s
 Ran all test suites.
