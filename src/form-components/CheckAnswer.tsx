@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
 export function CheckAnswer({
-    expectedAnswer = "2"
+    expectedAnswer
 }: {
     expectedAnswer: string;
 }): JSX.Element {
@@ -20,7 +20,6 @@ export function CheckAnswer({
                     <Form.Control value={answer} onChange={updateAnswer} />
                 </Form.Group>
             </div>
-            <div>The square root of 4 is: </div>
             <div>{answer === expectedAnswer ? "✔️" : "❌"}</div>
         </div>
     );
